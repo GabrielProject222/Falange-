@@ -1,32 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Falange</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Falange - Controle de Paletes</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="container">
+        <header>
+            <h1>📦 FALANGE</h1>
+            <p class="subtitle">Controle de Paletes</p>
+        </header>
 
-<h1>FALANGE</h1>
+        <!-- Barra de Pesquisa -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Número do corredor ou nome da mercadoria..." autocomplete="off">
+            <button id="searchBtn">Buscar</button>
+        </div>
 
-<h2>Escolha o corredor</h2>
+        <!-- Resultados da pesquisa -->
+        <div id="searchResults" class="search-results hidden"></div>
 
-<div class="corredores">
+        <!-- Lista de Corredores -->
+        <div id="corredoresSection">
+            <h2>Corredores</h2>
+            <div id="corredoresGrupos"></div>
+        </div>
+    </div>
 
-<a href="corredor1.html">
-<button>Corredor 1</button>
-</a>
-<button>Corredor 2</button>
-<button>Corredor 3</button>
-<button>Corredor 4</button>
-<button>Corredor 5</button>
-<button>Corredor 6</button>
-<button>Corredor 7</button>
-<button>Corredor 8</button>
-<button>Corredor 9</button>
-<button>Corredor 10</button>
-
-</div>
-
+    <script src="script.js"></script>
+    <script>
+        // Inicializa a página principal
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCorredores();
+            setupSearch();
+        });
+    </script>
 </body>
 </html>
