@@ -2,37 +2,46 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Corredor 1 - Falange</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Corredor - Falange</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-btn">← Voltar</a>
+            <h1 id="tituloCorredor">Corredor</h1>
+        </header>
 
-<h1>Corredor 1</h1>
+        <!-- Botão Adicionar -->
+        <button id="btnAdicionar" class="btn-primary">➕ Adicionar mercadoria</button>
 
-<h2>Paletes (3)</h2>
+        <!-- Formulário de Adicionar / Editar -->
+        <div id="formBox" class="form-box hidden">
+            <h3 id="formTitle">Nova mercadoria</h3>
+            <input type="text" id="inputNome" placeholder="Nome da mercadoria (ex: Néctar de uva 1L)" maxlength="80">
+            <input type="number" id="inputQtd" placeholder="Quantidade de paletes" min="1" value="1">
+            <div class="form-actions">
+                <button id="btnSalvar" class="btn-primary">Aceitar</button>
+                <button id="btnCancelar" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
 
-<div class="mercadoria">
-    <h3>📦 Néctar</h3>
-    <p>Quantidade: 3 paletes</p>
-</div>
+        <!-- Lista de mercadorias -->
+        <div id="listaMercadorias" class="lista-mercadorias">
+            <!-- Preenchido via JS -->
+        </div>
 
-<div class="mercadoria">
-    <h3>📦 Molho Tradicional</h3>
-    <p>Quantidade: 1 palete</p>
-</div>
+        <p id="msgVazio" class="msg-vazio hidden">Nenhuma mercadoria cadastrada neste corredor.</p>
+    </div>
 
-<div class="mercadoria">
-    <h3>📦 Vinagre Gota 750 ml</h3>
-    <p>Quantidade: 1 palete</p>
-</div>
-
-<button>+ Cadastrar mercadoria</button>
-
-<br><br>
-
-<a href="index.html">
-    <button>Voltar</button>
-</a>
-
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initCorredorPage();
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
